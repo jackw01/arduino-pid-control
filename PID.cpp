@@ -42,6 +42,7 @@ void PID::setPID(double p, double i, double d) {
     kd = d;
 }
 
+// Set derivative on measurement
 void PID::setDerivativeOnMeasurement(bool on) {
 
     derivativeOnMeasurement = on;
