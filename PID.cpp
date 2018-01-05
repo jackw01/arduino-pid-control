@@ -53,8 +53,9 @@ double PID::calculate(double input) {
 
     double prevError = error;
     error = setpoint - input;
-    totalError += error;
-    double dTerm = ((derivativeOnMeasurement) ? input - prevInput : error - prevError);
+    if ((error * kp < maxOutput) && (error * kp > minOutput)) totalError += error;
+    else totalError = 0;
+    double dTerm = (error - prevError);
     prevInput = input;
     return constrain(kp * error + ki * totalError - kd * dTerm, minOutput, maxOutput);
 }
