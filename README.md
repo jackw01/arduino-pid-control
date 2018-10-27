@@ -3,7 +3,7 @@ Versatile PID control library for Arduino and Arduino-compatible microcontroller
 
 ## Example Code
 ```arduino
-#include <PID.h>
+#include <pid.h>
 
 void setup() {
 
